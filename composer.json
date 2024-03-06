@@ -24,7 +24,7 @@
         "illuminate/contracts": "*",
         "illuminate/http": "*",
         "illuminate/support": "*",
-        "lcobucci/jwt": "^4.0",
+        "lcobucci/jwt": "^3.0",
         "nesbot/carbon": "^2.0"
     },
     "autoload": {
