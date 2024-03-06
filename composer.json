@@ -19,6 +19,14 @@
             "role": "Developer"
         }
     ],
+    "require": {
+        "illuminate/auth": "*",
+        "illuminate/contracts": "*",
+        "illuminate/http": "*",
+        "illuminate/support": "*",
+        "lcobucci/jwt": "^4.0",
+        "nesbot/carbon": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Tymon\\JWTAuth\\": "src"
