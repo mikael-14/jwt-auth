@@ -76,7 +76,7 @@ class Payload implements \ArrayAccess
                 return array_map([$this, 'get'], $claim);
             }
 
-            return array_get($this->toArray(), $claim, false);
+            return \Illuminate\Support\Arr::get($this->toArray(), $claim, false);
         }
 
         return $this->toArray();
@@ -122,7 +122,7 @@ class Payload implements \ArrayAccess
      */
     public function offsetGet($key)
     {
-        return array_get($this->toArray(), $key, []);
+        return Arr::get($this->toArray(), $key, []);
     }
 
     /**
@@ -160,7 +160,7 @@ class Payload implements \ArrayAccess
      */
     public function __call($method, $parameters)
     {
-        if (! method_exists($this, $method) && starts_with($method, 'get')) {
+        if (! method_exists($this, $method) && \Illuminate\Support\Str::startsWith($method, 'get')) {
             $class = sprintf('Tymon\\JWTAuth\\Claims\\%s', substr($method, 3));
 
             foreach ($this->claims as $claim) {

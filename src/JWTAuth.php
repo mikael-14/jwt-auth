@@ -220,7 +220,7 @@ class JWTAuth
     {
         $header = $this->request->headers->get($header);
 
-        if (! starts_with(strtolower($header), $method)) {
+        if (! \Illuminate\Support\Str::startsWith(strtolower($header), $method)) {
             return false;
         }
 
