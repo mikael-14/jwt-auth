@@ -122,7 +122,7 @@ class Payload implements \ArrayAccess
      */
     public function offsetGet($key)
     {
-        return Arr::get($this->toArray(), $key, []);
+        return \Illuminate\Support\Arr::get($this->toArray(), $key, []);
     }
 
     /**
